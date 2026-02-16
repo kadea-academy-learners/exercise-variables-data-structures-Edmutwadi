@@ -10,19 +10,25 @@ def main():
     foods_raw = input("Enter favorite foods (comma-separated): ")
 
     # 2) Variables & structures de données (TODO)
-    age = 0  # TODO: current_year - birth_year
+    age = current_year - birth_year # TODO: current_year - birth_year
 
-    foods_list = []  # TODO: split foods_raw by ',' then strip each element
-    foods_set = set()  # TODO: set(foods_list)
+    foods_list = [food.strip() for food in foods_raw.split(",")]  # TODO: split foods_raw by ',' then strip each element
+    foods_set = set(foods_list)  # TODO: set(foods_list)
 
-    profile_dict = {}  # TODO: {'name': name, 'city': city, 'age': age, 'foods': foods_list}
+    profile_dict = {
+        "name" : name,
+        "city" : city,
+        "age" : age,
+        "foods" : foods_set,
+
+    }  # TODO: {'name': name, 'city': city, 'age': age, 'foods': foods_list}
     summary_tuple = tuple()  # TODO: (name, age, city)
 
     # 3) Output (garde exactement ces libellés)
     print("--------------------")
     print(f"Name: {name}")
     print(f"City: {city}")
-    print(f"Age: {age}")
+    print(f"Age: {age} ans")
     print(f"Foods (list): {foods_list}")
     print(f"Foods count: {len(foods_list)}")
     print(f"Unique foods: {len(foods_set)}")
